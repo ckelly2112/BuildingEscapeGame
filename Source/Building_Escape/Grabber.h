@@ -28,10 +28,13 @@ protected:
 private:
 
 	
-	float Reach = 100.f;
+	float Reach = 100.f;	
 	
+	UPROPERTY()
 	UPhysicsHandleComponent* PhysicsHandle = nullptr;
+	UPROPERTY()
 	UInputComponent* InputComponent = nullptr;
+
 
 	void Grab();
 	void Release();
@@ -41,5 +44,9 @@ private:
 	//Return the first Actor within reach with a physics body
 	FHitResult GetFirstPhysicsBodyInReach() const;
 
+	//Get Reach of Actor
+	FVector GetPlayerReach() const;
+
+	FVector GetPlayerPos() const;
 		
 };
